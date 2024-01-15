@@ -37,7 +37,7 @@ pylint = ">=2.17.3,<4.0.0"
 rstcheck = ">=3.3.1,<7.0.0"
 mypy = "^1.2.0"
 # testing and code coverage
-lxml-stubs = "^0.4.0"
+lxml-stubs = ">=0.4,<0.6"
 pytest = "^7.3.1"
 pytest-vcr = "1.0.2"
 types-requests = ">=2.0"
