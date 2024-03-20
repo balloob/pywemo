@@ -1,4 +1,5 @@
 """Module that implements SSDP protocol."""
+
 from __future__ import annotations
 
 import logging

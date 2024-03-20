@@ -1,6 +1,7 @@
 r"""Lightweight Python module to discover and control WeMo devices.
 .. include:: README.md
 """
+
 # flake8: noqa F401
 
 from .discovery import (

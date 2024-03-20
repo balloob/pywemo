@@ -1,4 +1,5 @@
 """Representation of a WeMo Dimmer device."""
+
 from __future__ import annotations
 
 from .api.long_press import LongPressMixin

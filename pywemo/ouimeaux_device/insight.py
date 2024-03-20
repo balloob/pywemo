@@ -1,4 +1,5 @@
 """Representation of a WeMo Insight device."""
+
 from __future__ import annotations
 
 import logging

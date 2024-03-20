@@ -27,7 +27,7 @@ lxml = ">=4.6"
 # toml is used by multiple tools to read this pyproject.toml file
 toml = ">=0.10"
 # formatters
-black = "23.12.1"
+black = "24.3.0"
 isort = "^5.6.4"
 # linters/code analysis
 flake8 = "^6.0.0"

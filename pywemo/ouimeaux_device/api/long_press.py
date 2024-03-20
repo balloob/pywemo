@@ -7,6 +7,7 @@ configured for the device, it will turn on/off/toggle other Wemo devices on the
 network. The methods in this mixin allow editing of the devices that are
 controlled by a long press.
 """
+
 from __future__ import annotations
 
 import logging

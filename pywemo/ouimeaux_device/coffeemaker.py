@@ -1,4 +1,5 @@
 """Representation of a WeMo CoffeeMaker device."""
+
 from __future__ import annotations
 
 from enum import IntEnum

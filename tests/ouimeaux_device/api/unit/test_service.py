@@ -1,4 +1,5 @@
 """Tests for pywemo.ouimeaux_device.api.service."""
+
 from __future__ import annotations
 
 import unittest.mock as mock

@@ -1,4 +1,5 @@
 """Representation of a WeMo Bridge (Link) device."""
+
 from __future__ import annotations
 
 import io

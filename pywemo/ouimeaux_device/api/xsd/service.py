@@ -139,6 +139,7 @@ try:
 except ModulenotfoundExp_:
 
     class GdsCollector_(object):
+
         def __init__(self, messages=None):
             if messages is None:
                 self.messages = []
