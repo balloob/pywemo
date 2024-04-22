@@ -83,18 +83,18 @@ jobs:
           exit 1
       - name: Archive code modifications
         if: failure() && steps.modified.outputs.build-changes
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           name: build-changes-${{ join(matrix.*, '-') }}
           path: ${{ steps.modified.outputs.build-changes }}
       - name: Archive build artifacts
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           if-no-files-found: error
           name: dist-${{ join(matrix.*, '-') }}
           path: dist/
       - name: Archive coverage results
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
         with:
           if-no-files-found: error
           name: coverage-${{ join(matrix.*, '-') }}
