@@ -1,4 +1,5 @@
 """Light-weight mapping between sqlite3 and python data structures."""
+
 import logging
 import sqlite3
 from typing import Any, Callable, Dict

@@ -1,4 +1,5 @@
 """Representation of a WeMo CrockPot device."""
+
 from __future__ import annotations
 
 import logging

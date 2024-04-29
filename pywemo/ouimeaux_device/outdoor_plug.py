@@ -1,4 +1,5 @@
 """Representation of a WeMo OutdoorPlug device."""
+
 from .switch import Switch
 
 

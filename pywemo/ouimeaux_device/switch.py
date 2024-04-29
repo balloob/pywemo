@@ -1,4 +1,5 @@
 """Representation of a WeMo Switch device."""
+
 from __future__ import annotations
 
 from . import Device

@@ -1,4 +1,5 @@
 """Representation of a WeMo Motion device."""
+
 from . import Device
 
 

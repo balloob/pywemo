@@ -1,4 +1,5 @@
 """Representation of Services and Actions for WeMo devices."""
+
 from __future__ import annotations
 
 import logging

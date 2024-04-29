@@ -1,4 +1,5 @@
 """Integration tests for the Dimmer class."""
+
 import threading
 
 import pytest

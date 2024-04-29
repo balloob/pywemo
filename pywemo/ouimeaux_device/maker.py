@@ -1,4 +1,5 @@
 """Representation of a WeMo Maker device."""
+
 from __future__ import annotations
 
 from typing import TypedDict

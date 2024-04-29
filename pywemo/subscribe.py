@@ -31,6 +31,7 @@ registry.unregister(device)
 registry.stop()
 ```
 """
+
 from __future__ import annotations
 
 import collections

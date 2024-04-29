@@ -6,6 +6,7 @@ provided for optional fields. Clients of this module can expect that all
 fields of the dataclass instances are fully populated and valid. Any parsing
 or validation issues will result in InvalidSchemaError being raised.
 """
+
 from __future__ import annotations
 
 import logging

@@ -1,4 +1,5 @@
 """Exceptions raised by pywemo."""
+
 from __future__ import annotations
 
 from lxml import etree as et
