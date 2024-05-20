@@ -1,5 +1,6 @@
 """Integration tests for the Dimmer class."""
 import threading
+import time
 
 import pytest
 
@@ -69,11 +70,111 @@ class Test_PVT_RTOS_Dimmer_v2(Base):
 
     @pytest.fixture
     def dimmer(self, vcr):
-        with vcr.use_cassette("WEMO_WW_2.00.20110904.PVT-RTOS-DimmerV2"):
+        with vcr.use_cassette("WEMO_WW_2.00.20110904.PVT-RTOS-DimmerV2") as c:
+            # When not recording, we don't have to wait for the hardware to
+            # perform any real actions, there is therefore no reason to
+            # slow down the tests.
+            vcr.wait = (
+                lambda x: None if c.record_mode == "none" else time.sleep(x)
+            )
             return device_from_uuid_and_location(
                 "uuid:Dimmer-2_0-SERIALNUMBER",
                 "http://192.168.1.100:49153/setup.xml",
             )
+
+    @pytest.mark.vcr()
+    def test_toggle(self, dimmer):
+        dimmer.off()
+        dimmer.toggle()
+        assert dimmer.get_state(force_update=True) == 1
+        dimmer.toggle()
+        assert dimmer.get_state(force_update=True) == 0
+
+    @pytest.mark.vcr()
+    def test_turn_on_transition(self, dimmer, vcr):
+        dimmer.set_brightness(50)
+        dimmer.off()
+        dimmer.on(3)
+        start = time.time()
+        assert dimmer.get_state() == 1
+        assert 0 < dimmer.get_brightness() < 25
+        vcr.wait(start + 1.5 - time.time())
+        assert 25 < dimmer.get_brightness() < 50
+        vcr.wait(start + 3.0 - time.time())
+        assert dimmer.get_brightness(force_update=True) == 50
+        assert dimmer.get_state(force_update=True) == 1
+
+    @pytest.mark.vcr()
+    def test_turn_off_transition(self, dimmer, vcr):
+        dimmer.set_brightness(50)
+        dimmer.off(3)
+        start = time.time()
+        assert dimmer.get_state() == 1
+        assert 25 < dimmer.get_brightness() < 50
+        vcr.wait(start + 1.5 - time.time())
+        assert 0 < dimmer.get_brightness() < 25
+        vcr.wait(start + 3.0 - time.time())
+        assert dimmer.get_brightness(force_update=True) == 50
+        assert dimmer.get_state(force_update=True) == 0
+
+    @pytest.mark.vcr()
+    def test_turn_on_cancels_off_transition(self, dimmer, vcr):
+        dimmer.set_brightness(50)
+        dimmer.off(3)
+        vcr.wait(0.5)
+        dimmer.on(3)
+        brightness = dimmer.get_brightness()
+        assert 25 < brightness < 50
+        vcr.wait(1.0)
+        assert dimmer.get_brightness(force_update=True) == brightness
+        assert dimmer.get_state(force_update=True) == 1
+
+    @pytest.mark.vcr()
+    def test_toggle_on_transition(self, dimmer, vcr):
+        dimmer.set_brightness(50)
+        dimmer.off()
+        dimmer.toggle(3)
+        start = time.time()
+        assert dimmer.get_state() == 1
+        assert 0 < dimmer.get_brightness() < 25
+        vcr.wait(start + 1.5 - time.time())
+        assert 25 < dimmer.get_brightness() < 50
+        vcr.wait(start + 3.0 - time.time())
+        assert dimmer.get_brightness(force_update=True) == 50
+        assert dimmer.get_state(force_update=True) == 1
+
+    @pytest.mark.vcr()
+    def test_toggle_off_transition(self, dimmer, vcr):
+        dimmer.set_brightness(50)
+        dimmer.toggle(3)
+        start = time.time()
+        assert dimmer.get_state() == 1
+        assert 25 < dimmer.get_brightness() < 50
+        vcr.wait(start + 1.5 - time.time())
+        assert 0 < dimmer.get_brightness() < 25
+        vcr.wait(start + 3.0 - time.time())
+        assert dimmer.get_brightness(force_update=True) == 50
+        assert dimmer.get_state(force_update=True) == 0
+
+    @pytest.mark.vcr()
+    @pytest.mark.parametrize(
+        "begin,end,expected_state,expected_brightness",
+        [(20, 100, 1, 100), (60, 0, 0, 60), (20, 45, 1, 45)],
+    )
+    def test_set_brightness_transition(
+        self, dimmer, vcr, begin, end, expected_state, expected_brightness
+    ):
+        dimmer.set_brightness(begin)
+        dimmer.set_brightness(end, 3)
+        start = time.time()
+        assert dimmer.get_state() == 1
+        mid = begin + (end - begin) / 2
+        assert min(begin, mid) < dimmer.get_brightness() < max(begin, mid)
+        vcr.wait(start + 1.5 - time.time())
+        assert min(end, mid) < dimmer.get_brightness() < max(end, mid)
+        vcr.wait(start + 3.0 - time.time())
+        assert dimmer.get_brightness(force_update=True) == expected_brightness
+        assert dimmer.get_state(force_update=True) == expected_state
 
     @pytest.mark.vcr()
     def test_is_subscribed(self, dimmer, subscription_registry):

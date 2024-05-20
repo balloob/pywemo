@@ -1,0 +1,354 @@
+interactions:
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:SetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+      <BinaryState>1</BinaryState>
+
+      <brightness>50</brightness>
+
+      </u:SetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#SetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:SetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>50</brightness><CountdownEndTime>0</CountdownEndTime><deviceCurrentTime>1698010244</deviceCurrentTime></u:SetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '397'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:SetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+      <BinaryState>0</BinaryState>
+
+      </u:SetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#SetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:SetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>0</BinaryState><brightness>50</brightness><CountdownEndTime>0</CountdownEndTime><deviceCurrentTime>1698010244</deviceCurrentTime></u:SetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '397'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:SetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+      <BinaryState>1</BinaryState>
+
+      <brightness>1</brightness>
+
+      </u:SetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#SetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:SetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>1</brightness><CountdownEndTime>0</CountdownEndTime><deviceCurrentTime>1698010245</deviceCurrentTime></u:SetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '396'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:SetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+      <BinaryState>1</BinaryState>
+
+      <fader>3:0:1:0:50</fader>
+
+      </u:SetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#SetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:SetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>1</brightness><CountdownEndTime>0</CountdownEndTime><deviceCurrentTime>1698010245</deviceCurrentTime></u:SetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '396'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:GetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+
+      </u:GetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#GetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:GetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>4</brightness></u:GetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '309'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:GetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+
+      </u:GetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#GetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:GetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>5</brightness></u:GetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '309'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:GetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+
+      </u:GetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#GetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:GetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>30</brightness></u:GetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '310'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:GetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+
+      </u:GetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#GetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:GetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>50</brightness></u:GetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '310'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '<?xml version="1.0" encoding="utf-8"?>
+
+      <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+      <s:Body>
+
+      <u:GetBinaryState xmlns:u="urn:Belkin:service:basicevent:1">
+
+
+      </u:GetBinaryState>
+
+      </s:Body>
+
+      </s:Envelope>'
+    headers:
+      Content-Type:
+      - text/xml
+      SOAPACTION:
+      - '"urn:Belkin:service:basicevent:1#GetBinaryState"'
+    method: POST
+    uri: http://192.168.1.100:49153/upnp/control/basicevent1
+  response:
+    body:
+      string: "<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" s:encodingStyle=\"\
+        http://schemas.xmlsoap.org/soap/encoding/\">\r\n<s:Body>\r\n<u:GetBinaryStateResponse\
+        \ xmlns:u=\"urn:Belkin:service:basicevent:1\"><BinaryState>1</BinaryState><brightness>50</brightness></u:GetBinaryStateResponse></s:Body>\r\
+        \n</s:Envelope>"
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '310'
+      Content-Type:
+      - text/xml
+    status:
+      code: 200
+      message: OK
+version: 1
